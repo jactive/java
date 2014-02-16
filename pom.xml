@@ -94,7 +94,8 @@
             </goals>
             <configuration>
               <sources>
-                <source>${basedir}/src/junit-runtime-bean-demo/java</source>
+                <source>${basedir}/src/mockito-demo/java</source>
+                <source>${basedir}/src/spring-test-demo/java</source>
               </sources>
             </configuration>
           </execution>
@@ -108,7 +109,7 @@
             <configuration>
               <sources>
                 <source>${basedir}/test/mockito-demo/java</source>
-                <source>${basedir}/test/junit-runtime-bean-demo/java</source>
+                <source>${basedir}/test/spring-test-demo/java</source>
               </sources>
             </configuration>
           </execution>
@@ -132,7 +133,7 @@
                   </excludes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/test/junit-runtime-bean-demo/resources</directory>
+                  <directory>${basedir}/test/spring-test-demo/resources</directory>
                 </resource>
               </resources>
             </configuration>

@@ -4,12 +4,10 @@ import javax.annotation.Resource;
 
 public class DummyServiceImpl implements DummyService {
 
-	@Resource(name = "dummyDao")
-	private DummyDao dummyDao;
+    @Resource(name = "dummyDao")
+    private DummyDao dummyDao;
 
-	public String getMessage(long id) {
-		return dummyDao.getMessageById(id);
-	}
-
-	
+    public String getMessage(long id) {
+        return dummyDao.getMessageById(id);
+    }
 }

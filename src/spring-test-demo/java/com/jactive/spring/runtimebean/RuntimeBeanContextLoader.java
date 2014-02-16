@@ -26,6 +26,8 @@ public class RuntimeBeanContextLoader extends GenericXmlContextLoader {
     /**
      * A default DummyDao implementation. It could be a meaningful implementation
      * which is decided at runtime by choice.
+     * 
+     * @see com.jactive.mock.SpringMockitoContextLoader
      */
     public static class DefaultDummyDao implements DummyDao {
 
