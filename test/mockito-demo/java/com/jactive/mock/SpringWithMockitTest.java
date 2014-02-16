@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.annotation.Repeat;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -29,9 +30,11 @@ public class SpringWithMockitTest {
 	
 	@Before
 	public void setup() {
-		MockitoAnnotations.initMocks(this); 
+		MockitoAnnotations.initMocks(this);
 	}
+
 	@Test
+	@Repeat(3)
 	public void testDummyDao() {
 		String firstMessage = "Message 1st"; 
 		when(dummyDao.getMessageById(1L)).thenReturn(firstMessage);
@@ -40,6 +43,6 @@ public class SpringWithMockitTest {
 		
 		verify(dummyDao).getMessageById(1L);
 		
-		System.out.println(dummyDao.getClass());
+		System.out.println(System.identityHashCode(dummyDao) + "@" + dummyDao.getClass());
 	}
 }

@@ -3,11 +3,11 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>jactive</groupId>
-  <artifactId>mock</artifactId>
+  <artifactId>java-lib-demos</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1</version>
-  <name>jactive-mock</name>
-  <url>http://maven.apache.org</url>
+  <version>1.0.0</version>
+  <name>Java Library Demo</name>
+	<url>https://github.com/jactive/java</url>
 
   <dependencies>
     <dependency>
@@ -40,23 +40,6 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
       <version>3.1.2.RELEASE</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>4.1.7.Final</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>6.0</version>
-    </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.21</version>
     </dependency>
 
     <dependency>
