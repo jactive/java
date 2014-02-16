@@ -1,4 +1,4 @@
-package com.jactive.mock;
+package com.jactive.fakebusiness;
 
 import javax.annotation.Resource;
 

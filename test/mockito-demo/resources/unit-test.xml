@@ -9,11 +9,11 @@ http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<bean id="dummyDao" class="org.mockito.Mockito" factory-method="mock">
-		<constructor-arg value="com.jactive.mock.DummyDao"></constructor-arg>
+		<constructor-arg value="com.jactive.fakebusiness.DummyDao" />
 	</bean>
 
 
 	<!-- a service object; we will be profiling its methods -->
-	<bean id="dummyService" class="com.jactive.mock.DummyServiceImpl" />
+	<bean id="dummyService" class="com.jactive.fakebusiness.DummyServiceImpl" />
 
 </beans>

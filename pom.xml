@@ -7,13 +7,24 @@
   <packaging>jar</packaging>
   <version>1.0.0</version>
   <name>Java Library Demo</name>
-	<url>https://github.com/jactive/java</url>
+  <url>https://github.com/jactive/java</url>
 
   <dependencies>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.0</version>
     </dependency>
 
     <dependency>
@@ -83,13 +94,13 @@
             </goals>
             <configuration>
               <sources>
-                <source>${basedir}/src/mockito-demo/java</source>
+                <source>${basedir}/src/junit-runtime-bean-demo/java</source>
               </sources>
             </configuration>
           </execution>
 
           <execution>
-            <id>Declare all the test source folders</id>
+            <id>Declare all the test source folders.</id>
             <phase>initialize</phase>
             <goals>
               <goal>add-test-source</goal>
@@ -97,6 +108,7 @@
             <configuration>
               <sources>
                 <source>${basedir}/test/mockito-demo/java</source>
+                <source>${basedir}/test/junit-runtime-bean-demo/java</source>
               </sources>
             </configuration>
           </execution>
@@ -111,13 +123,16 @@
               <!--Resource folders for test -->
               <resources>
                 <resource>
-                  <directory>${basedir}/test/mockito-demo/resource</directory>
+                  <directory>${basedir}/test/mockito-demo/resources</directory>
 
                   <filtering>true</filtering>
                   <excludes>
                     <!--Excluding file patterns. -->
                     <exclude>**/*.java</exclude>
                   </excludes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/test/junit-runtime-bean-demo/resources</directory>
                 </resource>
               </resources>
             </configuration>

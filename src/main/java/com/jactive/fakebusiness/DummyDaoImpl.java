@@ -1,4 +1,4 @@
-package com.jactive.mock;
+package com.jactive.fakebusiness;
 
 public class DummyDaoImpl implements DummyDao {
 
