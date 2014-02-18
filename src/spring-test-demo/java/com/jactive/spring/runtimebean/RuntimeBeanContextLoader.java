@@ -35,5 +35,9 @@ public class RuntimeBeanContextLoader extends GenericXmlContextLoader {
             LOG.debug("The InnerDummyDao is called with ID " + id);
             return DEFAULT_MESSAGE;
         }
+
+        public void saveMessage(long id, String message) {
+            throw new UnsupportedOperationException();
+        }
     }
 }

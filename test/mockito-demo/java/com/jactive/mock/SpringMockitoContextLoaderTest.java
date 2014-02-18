@@ -1,11 +1,13 @@
 package com.jactive.mock;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import javax.annotation.Resource;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,29 +38,35 @@ import com.jactive.fakebusiness.DummyService;
 @TestExecutionListeners(listeners = { SpringMockitoTestExecutionListener.class, DependencyInjectionTestExecutionListener.class })
 public class SpringMockitoContextLoaderTest {
 
-	@Mock
-	private DummyDao dummyDao;
+    @Mock
+    private DummyDao dummyDao;
 
-	@InjectMocks
-	@Resource(name = "dummyService")
-	private DummyService dummyService;
+    @InjectMocks
+    @Resource(name = "dummyService")
+    private DummyService dummyService;
 
-	@Before
-	public void setup() {
-		MockitoAnnotations.initMocks(this);
-	}
+    @Before
+    public void setup() {
+        MockitoAnnotations.initMocks(this);
 
-	@Test
-	@Repeat(3)
-	public void testDummyDao() {
-		String firstMessage = "Message 1st";
-		when(dummyDao.getMessageById(1L)).thenReturn(firstMessage);
+    }
 
-		assertEquals(firstMessage, dummyService.getMessage(1));
+    @After
+    public void tearDown() {
+        reset(dummyDao);
+    }
 
-		verify(dummyDao).getMessageById(1L);
+    @Test
+    @Repeat(3)
+    public void testDummyDao() {
+        String firstMessage = "Message 1st";
+        when(dummyDao.getMessageById(1L)).thenReturn(firstMessage);
 
-		System.out.println(System.identityHashCode(dummyDao) + "@"
-				+ dummyDao.getClass());
-	}
+        assertEquals(firstMessage, dummyService.getMessage(1));
+
+        verify(dummyDao).getMessageById(1L);
+
+        System.out.println(System.identityHashCode(dummyDao) + "@"
+                + dummyDao.getClass());
+    }
 }
