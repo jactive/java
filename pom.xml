@@ -15,7 +15,6 @@
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
-
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
@@ -25,6 +24,16 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-collections4</artifactId>
       <version>4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>16.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.2.5</version>
     </dependency>
 
     <dependency>
@@ -52,6 +61,21 @@
       <artifactId>spring-core</artifactId>
       <version>3.1.2.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>3.1.2.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
@@ -60,9 +84,20 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>1.9.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.2.9</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -110,6 +145,8 @@
               <sources>
                 <source>${basedir}/test/mockito-demo/java</source>
                 <source>${basedir}/test/spring-test-demo/java</source>
+                <source>${basedir}/test/guava-demo/java</source>
+                <source>${basedir}/test/mybatis-demo/java</source>
               </sources>
             </configuration>
           </execution>
@@ -125,6 +162,7 @@
               <resources>
                 <resource>
                   <directory>${basedir}/test/mockito-demo/resources</directory>
+                  <directory>${basedir}/test/mybatis-demo/resources</directory>
 
                   <filtering>true</filtering>
                   <excludes>
